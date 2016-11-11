@@ -1,0 +1,10 @@
+apply from: "$rootProject.projectDir/config/gradle/js/js-conventions.gradle"
+
+project.ext {
+    dockerTag = "welcome:latest"
+    dockerFile = "$projectDir/deploy/Dockerfile"
+    dockerWorkingDir = "$projectDir/deploy/stage"
+}
+
+//must set the ext property first.
+apply from: "$rootProject.projectDir/config/gradle/js/docker.gradle"
