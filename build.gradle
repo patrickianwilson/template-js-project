@@ -3,7 +3,7 @@ apply from: "$rootProject.projectDir/config/gradle/js/js-conventions.gradle"
 project.ext {
     dockerTag = "welcome:latest"
     dockerFile = "$projectDir/deploy/Dockerfile"
-    dockerWorkingDir = "$projectDir/deploy/stage"
+    dockerWorkingDir = "$projectDir/deploy"
 }
 
 //must set the ext property first.
