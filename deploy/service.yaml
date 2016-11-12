@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: node-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nodeApp
+    spec:
+      containers:
+      - name: nginx
+        image: %imageId%
+        ports:
+        - containerPort: 8080
