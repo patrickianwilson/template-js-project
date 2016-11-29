@@ -1,3 +1,7 @@
+if (rootProject.hasProperty("buildNum")) {
+    version = rootProject.getProperties().get("buildNum")
+}
+
 apply from: "$rootProject.projectDir/config/gradle/js/js-conventions.gradle"
 project.ext {
     dockerTag = "welcome:latest"
@@ -6,7 +10,7 @@ project.ext {
 
     serviceYamlFileTemplate = "$projectDir/deploy/service.yaml"
 
-    dockerImagePath = "us.gcr.io/inlaid-citron-94802/codetoolbox/node"
+    dockerImagePath = "us.gcr.io/inlaid-citron-94802/codetoolbox/node:${project.version}"
 }
 
 
